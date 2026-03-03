@@ -1,1 +1,0 @@
-# Erik-Baghdasaryan.github.io

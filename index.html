@@ -123,6 +123,7 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:none}
+.reveal.fallback{opacity:1;transform:none}
 
 @media(max-width:720px){
   .about-inner{grid-template-columns:1fr}
@@ -471,6 +472,14 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── REVEAL FIRST SECTION IMMEDIATELY
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".reveal").forEach(r => {
+    const rect = r.getBoundingClientRect();
+    if (rect.top < window.innerHeight) r.classList.add("visible");
+  });
+});
+
 // ── NAV SCROLL ACTIVE ────────────────────────────────────────
 window.addEventListener('scroll', () => {
   let cur = '';
@@ -483,10 +492,29 @@ window.addEventListener('scroll', () => {
 });
 
 // ── SCROLL REVEAL ────────────────────────────────────────────
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(r => ro.observe(r));
+function revealAll() {
+  document.querySelectorAll('.reveal').forEach(r => r.classList.add('visible'));
+}
+if ('IntersectionObserver' in window) {
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.reveal').forEach(r => ro.observe(r));
+  // Fallback: if nothing visible after 800ms, reveal all
+  setTimeout(() => {
+    const anyVisible = document.querySelector('.reveal.visible');
+    if (!anyVisible) revealAll();
+  }, 800);
+} else {
+  revealAll();
+}
+// Also reveal on scroll as extra safety
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(r => {
+    const rect = r.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.92) r.classList.add('visible');
+  });
+}, { passive: true });
 
 // ── SKILL BARS ───────────────────────────────────────────────
 const so = new IntersectionObserver(entries => {
@@ -600,3 +628,4 @@ if (skillSec) so.observe(skillSec);
     sTimer++;
     if (sTimer > 20) {
       sTimer = 0;
+ 

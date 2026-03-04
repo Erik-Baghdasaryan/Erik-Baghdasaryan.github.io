@@ -10,69 +10,62 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:#04080f;color:#e2e8f0;overflow-x:hidden}
+
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(4,8,15,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,212,255,0.1);height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem}
-.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#e2e8f0;letter-spacing:-0.01em;user-select:none}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:#e2e8f0;letter-spacing:-0.01em}
 .nav-logo span{color:#00d4ff}
 .nav-links{display:flex;gap:2px;list-style:none}
-.nav-links a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:8px;text-decoration:none;color:#475569;font-size:0.82rem;font-weight:500;transition:all 0.2s;cursor:pointer;border:1px solid transparent}
+.nav-links a{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:8px;text-decoration:none;color:#475569;font-size:0.82rem;font-weight:500;transition:all 0.2s;border:1px solid transparent}
 .nav-links a:hover{color:#00d4ff;background:rgba(0,212,255,0.07)}
 .nav-links a.active{color:#00d4ff;background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.2)}
 .nav-links a i{font-size:0.7rem}
 
-/* LAYOUT */
 main{position:relative;z-index:1;padding-top:62px}
 section{min-height:100vh;max-width:1080px;margin:0 auto;padding:7rem 2rem 4rem}
 
-/* SECTION HEADER */
 .s-tag{display:inline-flex;align-items:center;gap:8px;padding:4px 13px;background:rgba(0,212,255,0.07);border:1px solid rgba(0,212,255,0.2);border-radius:20px;color:#00d4ff;font-size:0.72rem;font-weight:600;letter-spacing:0.09em;text-transform:uppercase;margin-bottom:20px}
 h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px}
 h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.6rem);font-weight:700;letter-spacing:-0.025em;margin-bottom:6px}
 .grad{background:linear-gradient(135deg,#00d4ff 0%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* CARD */
-.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;transition:border-color 0.25s,background 0.25s}
-.card:hover{border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.02)}
+.card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;transition:border-color 0.25s}
+.card:hover{border-color:rgba(0,212,255,0.2)}
 
-/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:10px;font-weight:600;font-size:0.9rem;cursor:pointer;text-decoration:none;font-family:inherit;transition:all 0.2s;border:none}
 .btn-p{background:linear-gradient(135deg,#00d4ff,#7c3aed);color:#fff}
 .btn-p:hover{opacity:0.85;transform:translateY(-1px)}
 .btn-o{background:transparent;border:1px solid rgba(0,212,255,0.4);color:#00d4ff}
 .btn-o:hover{background:rgba(0,212,255,0.09)}
 
-/* ─── ABOUT ─── */
+/* ABOUT */
 #about{display:flex;flex-direction:column;justify-content:center}
-.about-inner{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
-.about-text{}
-.about-photo{display:flex;flex-direction:column;align-items:center;gap:16px}
-.photo-ring{width:170px;height:170px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#00d4ff,#7c3aed);flex-shrink:0}
-.photo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:3px solid #04080f}
-.photo-placeholder{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(124,58,237,0.15));display:flex;align-items:center;justify-content:center;border:3px solid #04080f;font-size:3rem}
-.hero-title-sub{font-size:clamp(1rem,2vw,1.4rem);color:#475569;font-weight:500;font-family:'Space Grotesk',sans-serif}
+.about-inner{display:grid;grid-template-columns:1fr 200px;gap:3rem;align-items:center}
 .hero-sub{font-size:0.97rem;color:#94a3b8;max-width:540px;line-height:1.8;margin-bottom:28px}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
 .contact-chips{display:flex;flex-wrap:wrap;gap:10px}
 .chip{display:inline-flex;align-items:center;gap:7px;padding:6px 13px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.78rem;color:#64748b;text-decoration:none;transition:all 0.2s}
 .chip:hover{color:#00d4ff;border-color:rgba(0,212,255,0.3)}
 .chip i{font-size:0.72rem;color:#00d4ff}
+.photo-box{display:flex;flex-direction:column;align-items:center;gap:16px}
+.photo-ring{width:160px;height:160px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#00d4ff,#7c3aed)}
+.photo-inner{width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,rgba(0,212,255,0.15),rgba(124,58,237,0.15));border:3px solid #04080f;display:flex;align-items:center;justify-content:center;font-size:3rem}
 
-/* ─── EXPERIENCE ─── */
+/* TIMELINE */
 .timeline{position:relative;padding-left:32px}
 .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#00d4ff,#7c3aed,transparent)}
-.tl-item{position:relative;margin-bottom:32px}
+.tl-item{position:relative;margin-bottom:28px}
 .tl-dot{position:absolute;left:-37px;top:10px;width:11px;height:11px;border-radius:50%;background:#00d4ff;box-shadow:0 0 12px #00d4ff}
 .tl-date{font-size:0.72rem;color:#00d4ff;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px}
 .tl-role{font-size:1.05rem;font-weight:700;color:#f1f5f9;margin-bottom:3px}
 .tl-company{font-size:0.82rem;color:#475569;margin-bottom:4px}
-.tl-addr{font-size:0.78rem;color:#334155;margin-bottom:10px;font-style:italic}
+.tl-addr{font-size:0.76rem;color:#334155;margin-bottom:10px;font-style:italic}
 .tl-list{list-style:none;display:flex;flex-direction:column;gap:5px}
 .tl-list li{font-size:0.85rem;color:#94a3b8;line-height:1.6;padding-left:14px;position:relative}
 .tl-list li::before{content:'›';position:absolute;left:0;color:#00d4ff;font-weight:700}
 
-/* ─── CV ─── */
+/* CV */
 .cv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-bottom:28px}
 .cv-cat{font-size:0.82rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .cv-entry{margin-bottom:14px}
@@ -82,27 +75,27 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.6rem);f
 .lang-row{display:flex;flex-direction:column;gap:10px}
 .lang-item{display:flex;align-items:center;justify-content:space-between}
 .lang-name{font-size:0.85rem;color:#cbd5e1;font-weight:500}
-.stars{color:#f59e0b;font-size:0.75rem;letter-spacing:1px}
+.stars{color:#f59e0b;font-size:0.75rem}
 
-/* ─── PROJECTS ─── */
+/* PROJECTS */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
 .proj-icon{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(124,58,237,0.1));border:1px solid rgba(0,212,255,0.18);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
 .proj-name{font-size:0.98rem;font-weight:700;color:#f1f5f9}
 .proj-desc{font-size:0.83rem;color:#94a3b8;line-height:1.65;margin-bottom:12px}
-.pill-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.pill-row{display:flex;flex-wrap:wrap;gap:5px}
 .pill{padding:3px 8px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:6px;color:#a78bfa;font-size:0.7rem;font-weight:500}
 
-/* ─── SKILLS ─── */
+/* SKILLS */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:36px}
 .sk-cat{font-size:0.82rem;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
 .sk-item{margin-bottom:13px}
 .sk-label{display:flex;justify-content:space-between;font-size:0.8rem;color:#cbd5e1;font-weight:500;margin-bottom:5px}
 .sk-bar{height:5px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden}
-.sk-fill{height:100%;border-radius:10px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
+.sk-fill{height:100%;border-radius:10px;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
 .tools-wrap{display:flex;flex-wrap:wrap;gap:8px}
 .tool{padding:5px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.76rem;color:#64748b;font-weight:500}
 
-/* ─── CONTACT ─── */
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .c-meta{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
 .c-meta a,.c-meta span{display:flex;align-items:center;gap:10px;font-size:0.86rem;color:#64748b;text-decoration:none;transition:color 0.2s}
@@ -111,23 +104,12 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.6rem);f
 .soc-row{display:flex;gap:8px}
 .soc-btn{width:38px;height:38px;border-radius:9px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.09);display:flex;align-items:center;justify-content:center;color:#64748b;text-decoration:none;font-size:0.95rem;transition:all 0.2s}
 .soc-btn:hover{background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.35);color:#00d4ff}
-.form-col{display:flex;flex-direction:column;gap:12px}
-.form-col input,.form-col textarea{width:100%;padding:9px 13px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;color:#e2e8f0;font-family:inherit;font-size:0.86rem;outline:none;transition:border-color 0.2s}
-.form-col input:focus,.form-col textarea:focus{border-color:rgba(0,212,255,0.4)}
-.form-col input::placeholder,.form-col textarea::placeholder{color:#2d3f52}
-.form-col textarea{min-height:110px;resize:vertical}
 
-/* FOOTER */
 footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-top:1px solid rgba(255,255,255,0.04);position:relative;z-index:1}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
-.reveal.visible{opacity:1;transform:none}
-.reveal.fallback{opacity:1;transform:none}
 
 @media(max-width:720px){
   .about-inner{grid-template-columns:1fr}
-  .about-photo{display:none}
+  .photo-box{display:none}
   .contact-grid{grid-template-columns:1fr}
   .nav-links a span{display:none}
   .nav-links a{padding:7px 9px}
@@ -141,346 +123,292 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
 <nav>
   <div class="nav-logo">Erik <span>Baghdasaryan</span></div>
   <ul class="nav-links">
-    <li><a href="#about"    class="active"><i class="fa fa-user"></i><span> À propos</span></a></li>
-    <li><a href="#experience">             <i class="fa fa-briefcase"></i><span> Expériences</span></a></li>
-    <li><a href="#cv">                     <i class="fa fa-file-lines"></i><span> CV</span></a></li>
-    <li><a href="#projects">               <i class="fa fa-code"></i><span> Projets</span></a></li>
-    <li><a href="#skills">                 <i class="fa fa-bolt"></i><span> Compétences</span></a></li>
-    <li><a href="#contact">                <i class="fa fa-envelope"></i><span> Contact</span></a></li>
+    <li><a href="#about"      class="active"><i class="fa fa-user"></i><span> À propos</span></a></li>
+    <li><a href="#experience"             ><i class="fa fa-briefcase"></i><span> Expériences</span></a></li>
+    <li><a href="#cv"                     ><i class="fa fa-file-lines"></i><span> CV</span></a></li>
+    <li><a href="#projects"               ><i class="fa fa-code"></i><span> Projets</span></a></li>
+    <li><a href="#skills"                 ><i class="fa fa-bolt"></i><span> Compétences</span></a></li>
+    <li><a href="#contact"                ><i class="fa fa-envelope"></i><span> Contact</span></a></li>
   </ul>
 </nav>
 
 <main>
 
-<!-- ═══════════════════════════════ À PROPOS ═══════════════════════════════ -->
+<!-- ═══════════ À PROPOS ═══════════ -->
 <section id="about">
-  <div class="reveal">
-    <div class="about-inner">
-      <div class="about-text">
-        <span class="s-tag"><i class="fa fa-terminal"></i> BTS SIO &middot; Option SISR</span>
-        <h1>
-          Bonjour, je suis<br>
-          <span class="grad">Erik Baghdasaryan</span>
-        </h1>
-        <p class="hero-title-sub" style="margin-bottom:16px">Apprenti Administrateur Systèmes &amp; Réseaux</p>
-        <p class="hero-sub">
-          Étudiant en BTS SIO option SISR au Lycée Victor Hugo (Marseille), passionné par l'administration réseau, la cybersécurité et la gestion d'infrastructures. À la recherche d'une alternance pour mettre mes compétences en pratique.
-        </p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-p"><i class="fa fa-rocket"></i> Voir mes projets</a>
-          <a href="CV.pdf" download class="btn btn-o"><i class="fa fa-download"></i> Télécharger CV</a>
-        </div>
-        <div class="contact-chips">
-          <span class="chip"><i class="fa fa-map-pin"></i> 13010 Marseille · 20 ans</span>
-          <a href="/cdn-cgi/l/email-protection#4722352e2c692526202f23263426353e2629757307202a262e2b6924282a" class="chip"><i class="fa fa-envelope"></i> <span class="__cf_email__" data-cfemail="8eebfce7e5a0ecefe9e6eaeffdeffcf7efe0bcbacee9e3efe7e2a0ede1e3">[email&#160;protected]</span></a>
-          <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="chip"><i class="fab fa-linkedin-in"></i> erik-baghdasaryan</a>
-          <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="chip"><i class="fab fa-github"></i> Erik-Baghdasaryan</a>
-        </div>
+  <div class="about-inner">
+    <div>
+      <span class="s-tag"><i class="fa fa-terminal"></i> BTS SIO &middot; Option SISR</span>
+      <h1>Bonjour, je suis<br><span class="grad">Erik Baghdasaryan</span></h1>
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1rem,2vw,1.35rem);color:#475569;font-weight:500;margin-bottom:16px">
+        Apprenti Administrateur Systèmes &amp; Réseaux
+      </p>
+      <p class="hero-sub">
+        Étudiant en BTS SIO option SISR au Lycée Victor Hugo (Marseille), passionné par l'administration réseau, la cybersécurité et la gestion d'infrastructures. À la recherche d'une alternance pour mettre mes compétences en pratique.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-p"><i class="fa fa-rocket"></i> Voir mes projets</a>
+        <a href="CV.pdf" download class="btn btn-o"><i class="fa fa-download"></i> Télécharger CV</a>
       </div>
-      <div class="about-photo">
-        <div class="photo-ring">
-          <div class="photo-placeholder">👨‍💻</div>
-        </div>
-        <div style="text-align:center">
-          <div style="font-size:0.78rem;color:#334155;margin-bottom:4px">Disponible pour</div>
-          <span style="padding:4px 12px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:20px;font-size:0.72rem;color:#34d399;font-weight:600">Alternance 2025</span>
-        </div>
+      <div class="contact-chips">
+        <span class="chip"><i class="fa fa-map-pin"></i> 13010 Marseille · 20 ans</span>
+        <a href="mailto:erik.baghdasaryan24@gmail.com" class="chip"><i class="fa fa-envelope"></i> erik.baghdasaryan24@gmail.com</a>
+        <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="chip"><i class="fab fa-linkedin-in"></i> erik-baghdasaryan</a>
+        <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="chip"><i class="fab fa-github"></i> Erik-Baghdasaryan</a>
       </div>
+    </div>
+    <div class="photo-box">
+      <div class="photo-ring">
+        <div class="photo-inner">👨‍💻</div>
+      </div>
+      <span style="padding:5px 14px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:20px;font-size:0.72rem;color:#34d399;font-weight:600">Alternance 2025</span>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ EXPÉRIENCES ═══════════════════════════ -->
+<!-- ═══════════ EXPÉRIENCES ═══════════ -->
 <section id="experience">
-  <div class="reveal">
-    <span class="s-tag"><i class="fa fa-briefcase"></i> Expériences</span>
-    <h2>Expériences <span class="grad">Professionnelles</span></h2>
-    <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Mes missions et expériences terrain.</p>
+  <span class="s-tag"><i class="fa fa-briefcase"></i> Expériences</span>
+  <h2>Expériences <span class="grad">Professionnelles</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Mes missions et expériences terrain.</p>
 
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-date">Stage · 17 semaines</div>
-          <div class="tl-role">Technicien Support Informatique</div>
-          <div class="tl-company">Hôpital La Timone · AP-HM</div>
-          <div class="tl-addr"><i class="fa fa-map-pin" style="color:#00d4ff;font-size:0.7rem;margin-right:5px"></i>264 Rue Saint-Pierre, 13005 Marseille</div>
-          <ul class="tl-list">
-            <li>Clonage et déploiement des systèmes d'exploitation sur parc informatique hospitalier</li>
-            <li>Dépannage des ordinateurs, imprimantes et périphériques</li>
-            <li>Installation et configuration des postes de travail en local et à distance</li>
-          </ul>
-        </div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="card">
+        <div class="tl-date">Stage &middot; 17 semaines</div>
+        <div class="tl-role">Technicien Support Informatique</div>
+        <div class="tl-company">Hôpital La Timone &middot; AP-HM</div>
+        <div class="tl-addr"><i class="fa fa-map-pin" style="color:#00d4ff;font-size:0.7rem;margin-right:5px"></i>264 Rue Saint-Pierre, 13005 Marseille</div>
+        <ul class="tl-list">
+          <li>Clonage et déploiement des systèmes d'exploitation sur parc informatique hospitalier</li>
+          <li>Dépannage des ordinateurs, imprimantes et périphériques</li>
+          <li>Installation et configuration des postes de travail en local et à distance</li>
+        </ul>
       </div>
-
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="card">
-          <div class="tl-date">Stage · 6 semaines</div>
-          <div class="tl-role">Technicien Réseau &amp; Support</div>
-          <div class="tl-company">Atelier Express</div>
-          <div class="tl-addr"><i class="fa fa-map-pin" style="color:#00d4ff;font-size:0.7rem;margin-right:5px"></i>15 Rue du Dr Fiolle, 13006 Marseille</div>
-          <ul class="tl-list">
-            <li>Réparation d'appareils informatiques (PC, laptops, périphériques)</li>
-            <li>Relation clientèle et conseil technique</li>
-            <li>Configuration de routeurs et commutateurs réseau</li>
-          </ul>
-        </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="card">
+        <div class="tl-date">Stage &middot; 6 semaines</div>
+        <div class="tl-role">Technicien Réseau &amp; Support</div>
+        <div class="tl-company">Atelier Express</div>
+        <div class="tl-addr"><i class="fa fa-map-pin" style="color:#00d4ff;font-size:0.7rem;margin-right:5px"></i>15 Rue du Dr Fiolle, 13006 Marseille</div>
+        <ul class="tl-list">
+          <li>Réparation d'appareils informatiques (PC, laptops, périphériques)</li>
+          <li>Relation clientèle et conseil technique</li>
+          <li>Configuration de routeurs et commutateurs réseau</li>
+        </ul>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════ CV ════════════════════════════════ -->
+<!-- ═══════════ CV ═══════════ -->
 <section id="cv">
-  <div class="reveal">
-    <span class="s-tag"><i class="fa fa-file-lines"></i> Curriculum Vitae</span>
-    <h2>Mon <span class="grad">Parcours</span></h2>
-    <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Formations, diplômes, certifications et langues.</p>
+  <span class="s-tag"><i class="fa fa-file-lines"></i> Curriculum Vitae</span>
+  <h2>Mon <span class="grad">Parcours</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Formations, diplômes, certifications et langues.</p>
 
-    <div class="cv-grid">
-
-      <!-- Formation -->
-      <div class="card">
-        <div class="cv-cat" style="color:#00d4ff"><i class="fa fa-graduation-cap"></i> Formation</div>
-        <div class="cv-entry">
-          <h4>BTS SIO — Option SISR</h4>
-          <p>Lycée Victor Hugo · 2024–2026</p>
-          <span class="cv-badge" style="background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.28);color:#00d4ff">En cours</span>
-        </div>
-        <div class="cv-entry">
-          <h4>BAC SN RISC</h4>
-          <p>Lycée Professionnel Ampère · 2021–2024</p>
-          <span class="cv-badge" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.28);color:#34d399">Obtenu</span>
-        </div>
+  <div class="cv-grid">
+    <div class="card">
+      <div class="cv-cat" style="color:#00d4ff"><i class="fa fa-graduation-cap"></i> Formation</div>
+      <div class="cv-entry">
+        <h4>BTS SIO — Option SISR</h4>
+        <p>Lycée Victor Hugo · 2024–2026</p>
+        <span class="cv-badge" style="background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.28);color:#00d4ff">En cours</span>
       </div>
-
-      <!-- Certifications -->
-      <div class="card">
-        <div class="cv-cat" style="color:#a78bfa"><i class="fa fa-certificate"></i> Diplômes &amp; Certifications</div>
-        <div class="cv-entry">
-          <h4>BTS SIO</h4>
-          <p>Prévu 2026</p>
-          <span class="cv-badge" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.28);color:#a78bfa">En cours</span>
-        </div>
-        <div class="cv-entry">
-          <h4>Certification Cisco CCNA 2</h4>
-          <p>Prévu 2026</p>
-          <span class="cv-badge" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.28);color:#a78bfa">En cours</span>
-        </div>
-        <div class="cv-entry">
-          <h4>Bac Pro · Certification PIX · CCNA 1</h4>
-          <p>Obtenus en 2024</p>
-          <span class="cv-badge" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.28);color:#34d399">Obtenu</span>
-        </div>
+      <div class="cv-entry">
+        <h4>BAC SN RISC</h4>
+        <p>Lycée Professionnel Ampère · 2021–2024</p>
+        <span class="cv-badge" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.28);color:#34d399">Obtenu</span>
       </div>
+    </div>
 
-      <!-- Langues -->
-      <div class="card">
-        <div class="cv-cat" style="color:#f59e0b"><i class="fa fa-language"></i> Langues</div>
-        <div class="lang-row">
-          <div class="lang-item"><span class="lang-name">Français</span><span class="stars">★★★★★</span></div>
-          <div class="lang-item"><span class="lang-name">Russe</span><span class="stars">★★★★☆</span></div>
-          <div class="lang-item"><span class="lang-name">Anglais</span><span class="stars">★★★☆☆</span></div>
-          <div class="lang-item"><span class="lang-name">Arménien</span><span class="stars">★★★☆☆</span></div>
-        </div>
+    <div class="card">
+      <div class="cv-cat" style="color:#a78bfa"><i class="fa fa-certificate"></i> Certifications</div>
+      <div class="cv-entry">
+        <h4>Certification Cisco CCNA 2</h4>
+        <p>Prévu 2026</p>
+        <span class="cv-badge" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.28);color:#a78bfa">En cours</span>
       </div>
-
-      <!-- Téléchargement -->
-      <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;gap:16px">
-        <div class="cv-cat" style="color:#34d399"><i class="fa fa-download"></i> Télécharger</div>
-        <p style="font-size:0.83rem;color:#64748b;line-height:1.6">Retrouvez l'ensemble de mon parcours, compétences et expériences dans mon CV complet.</p>
-        <a href="CV.pdf" download class="btn btn-p" style="align-self:flex-start">
-          <i class="fa fa-file-pdf"></i> Télécharger le CV (PDF)
-        </a>
+      <div class="cv-entry">
+        <h4>BTS SIO</h4>
+        <p>Prévu 2026</p>
+        <span class="cv-badge" style="background:rgba(167,139,250,0.1);border:1px solid rgba(167,139,250,0.28);color:#a78bfa">En cours</span>
       </div>
+      <div class="cv-entry">
+        <h4>Certification Cisco CCNA 1 · PIX · Bac Pro</h4>
+        <p>Obtenus en 2024</p>
+        <span class="cv-badge" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.28);color:#34d399">Obtenu</span>
+      </div>
+    </div>
 
+    <div class="card">
+      <div class="cv-cat" style="color:#f59e0b"><i class="fa fa-language"></i> Langues</div>
+      <div class="lang-row">
+        <div class="lang-item"><span class="lang-name">Français</span><span class="stars">★★★★★</span></div>
+        <div class="lang-item"><span class="lang-name">Russe</span><span class="stars">★★★★☆</span></div>
+        <div class="lang-item"><span class="lang-name">Anglais</span><span class="stars">★★★☆☆</span></div>
+        <div class="lang-item"><span class="lang-name">Arménien</span><span class="stars">★★★☆☆</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;gap:16px">
+      <div class="cv-cat" style="color:#34d399"><i class="fa fa-download"></i> Télécharger</div>
+      <p style="font-size:0.83rem;color:#64748b;line-height:1.6">Mon CV complet au format PDF avec l'ensemble de mon parcours, compétences et expériences.</p>
+      <a href="CV.pdf" download class="btn btn-p" style="align-self:flex-start">
+        <i class="fa fa-file-pdf"></i> Télécharger le CV (PDF)
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ PROJETS ═══════════════════════════════ -->
+<!-- ═══════════ PROJETS ═══════════ -->
 <section id="projects">
-  <div class="reveal">
-    <span class="s-tag"><i class="fa fa-code"></i> Projets</span>
-    <h2>Mes <span class="grad">Projets</span></h2>
-    <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Labs, maquettes réseau et projets de sécurité réalisés en formation.</p>
+  <span class="s-tag"><i class="fa fa-code"></i> Projets</span>
+  <h2>Mes <span class="grad">Projets</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Labs, maquettes réseau et projets de sécurité réalisés en formation.</p>
 
-    <div class="projects-grid">
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
-          <div class="proj-icon">🌐</div>
-          <div class="proj-name">Infrastructure Réseau pfSense</div>
-        </div>
-        <p class="proj-desc">Déploiement d'un pare-feu pfSense avec segmentation VLANs, règles NAT/ACL, portail captif et supervision des flux réseau.</p>
-        <div class="pill-row"><span class="pill">pfSense</span><span class="pill">VLAN</span><span class="pill">NAT</span><span class="pill">ACL</span></div>
+  <div class="projects-grid">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
+        <div class="proj-icon">🌐</div><div class="proj-name">Infrastructure Réseau pfSense</div>
       </div>
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
-          <div class="proj-icon">🔒</div>
-          <div class="proj-name">Lab Active Directory</div>
-        </div>
-        <p class="proj-desc">Mise en place d'un domaine Windows Server avec Active Directory, GPO, gestion des utilisateurs et intégration des postes clients.</p>
-        <div class="pill-row"><span class="pill">Windows Server</span><span class="pill">AD DS</span><span class="pill">GPO</span><span class="pill">PowerShell</span></div>
+      <p class="proj-desc">Déploiement d'un pare-feu pfSense avec segmentation VLANs, règles NAT/ACL, portail captif et supervision des flux réseau.</p>
+      <div class="pill-row"><span class="pill">pfSense</span><span class="pill">VLAN</span><span class="pill">NAT</span><span class="pill">ACL</span></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
+        <div class="proj-icon">🔒</div><div class="proj-name">Lab Active Directory</div>
       </div>
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
-          <div class="proj-icon">📡</div>
-          <div class="proj-name">VPN Site-à-Site</div>
-        </div>
-        <p class="proj-desc">Configuration d'un tunnel OpenVPN entre deux sites distants simulés sous GNS3 avec routeurs Cisco et authentification par certificats.</p>
-        <div class="pill-row"><span class="pill">OpenVPN</span><span class="pill">Cisco IOS</span><span class="pill">GNS3</span><span class="pill">IPSec</span></div>
+      <p class="proj-desc">Mise en place d'un domaine Windows Server avec Active Directory, GPO, gestion des utilisateurs et intégration des postes clients.</p>
+      <div class="pill-row"><span class="pill">Windows Server</span><span class="pill">AD DS</span><span class="pill">GPO</span><span class="pill">PowerShell</span></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
+        <div class="proj-icon">📡</div><div class="proj-name">VPN Site-à-Site</div>
       </div>
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
-          <div class="proj-icon">🛡️</div>
-          <div class="proj-name">IDS/IPS avec Snort &amp; Suricata</div>
-        </div>
-        <p class="proj-desc">Déploiement d'un système de détection d'intrusions avec Snort et Suricata, écriture de règles personnalisées et analyse d'alertes avec Wireshark.</p>
-        <div class="pill-row"><span class="pill">Snort</span><span class="pill">Suricata</span><span class="pill">Wireshark</span><span class="pill">Nmap</span></div>
+      <p class="proj-desc">Configuration d'un tunnel OpenVPN entre deux sites distants simulés sous GNS3 avec routeurs Cisco et authentification par certificats.</p>
+      <div class="pill-row"><span class="pill">OpenVPN</span><span class="pill">Cisco IOS</span><span class="pill">GNS3</span><span class="pill">IPSec</span></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
+        <div class="proj-icon">🛡️</div><div class="proj-name">IDS/IPS avec Snort &amp; Suricata</div>
       </div>
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
-          <div class="proj-icon">🖥️</div>
-          <div class="proj-name">Supervision Nagios &amp; Zabbix</div>
-        </div>
-        <p class="proj-desc">Déploiement d'une solution de monitoring réseau avec alertes par mail, tableaux de bord et supervision SNMP des équipements actifs.</p>
-        <div class="pill-row"><span class="pill">Nagios</span><span class="pill">Zabbix</span><span class="pill">SNMP</span><span class="pill">Linux</span></div>
+      <p class="proj-desc">Déploiement d'un système de détection d'intrusions avec règles personnalisées et analyse des alertes via Wireshark.</p>
+      <div class="pill-row"><span class="pill">Snort</span><span class="pill">Suricata</span><span class="pill">Wireshark</span><span class="pill">Nmap</span></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
+        <div class="proj-icon">🖥️</div><div class="proj-name">Supervision Nagios &amp; Zabbix</div>
       </div>
-
-      <div class="card">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
-          <div class="proj-icon">⚙️</div>
-          <div class="proj-name">Virtualisation &amp; Proxmox</div>
-        </div>
-        <p class="proj-desc">Création d'un environnement de lab virtualisé sous Proxmox avec VMs Debian/Ubuntu, HAproxy en load-balancer et accès sécurisé via Tailscale.</p>
-        <div class="pill-row"><span class="pill">Proxmox</span><span class="pill">HAproxy</span><span class="pill">Tailscale</span><span class="pill">Debian</span></div>
+      <p class="proj-desc">Solution de monitoring réseau avec alertes mail, tableaux de bord et supervision SNMP des équipements actifs.</p>
+      <div class="pill-row"><span class="pill">Nagios</span><span class="pill">Zabbix</span><span class="pill">SNMP</span><span class="pill">Linux</span></div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
+        <div class="proj-icon">⚙️</div><div class="proj-name">Virtualisation &amp; Proxmox</div>
       </div>
-
+      <p class="proj-desc">Environnement de lab sous Proxmox avec VMs Debian/Ubuntu, HAproxy en load-balancer et accès sécurisé via Tailscale.</p>
+      <div class="pill-row"><span class="pill">Proxmox</span><span class="pill">HAproxy</span><span class="pill">Tailscale</span><span class="pill">Debian</span></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ COMPÉTENCES ═══════════════════════════ -->
+<!-- ═══════════ COMPÉTENCES ═══════════ -->
 <section id="skills">
-  <div class="reveal">
-    <span class="s-tag"><i class="fa fa-bolt"></i> Compétences</span>
-    <h2>Compétences <span class="grad">Techniques</span></h2>
-    <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Technologies et outils maîtrisés.</p>
+  <span class="s-tag"><i class="fa fa-bolt"></i> Compétences</span>
+  <h2>Compétences <span class="grad">Techniques</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Technologies et outils maîtrisés.</p>
 
-    <div class="skills-grid" id="skills-grid">
-
-      <div class="card">
-        <div class="sk-cat" style="color:#00d4ff"><i class="fa fa-network-wired"></i> Réseaux</div>
-        <div class="sk-item"><div class="sk-label"><span>Cisco IOS (Switch/Router)</span><span style="color:#00d4ff">88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88" style="background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>VLAN / Etherchannel</span><span style="color:#00d4ff">85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85" style="background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>TCP/IP · DNS · DHCP</span><span style="color:#00d4ff">90%</span></div><div class="sk-bar"><div class="sk-fill" data-w="90" style="background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>SSH · Protocoles</span><span style="color:#00d4ff">85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85" style="background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="sk-cat" style="color:#a78bfa"><i class="fa fa-shield-halved"></i> Cybersécurité</div>
-        <div class="sk-item"><div class="sk-label"><span>Snort / Suricata (IDS/IPS)</span><span style="color:#a78bfa">78%</span></div><div class="sk-bar"><div class="sk-fill" data-w="78" style="background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>Nmap / Wireshark</span><span style="color:#a78bfa">82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82" style="background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>OpenVPN</span><span style="color:#a78bfa">80%</span></div><div class="sk-bar"><div class="sk-fill" data-w="80" style="background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>pfSense (Firewall)</span><span style="color:#a78bfa">82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82" style="background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="sk-cat" style="color:#34d399"><i class="fa fa-server"></i> Systèmes</div>
-        <div class="sk-item"><div class="sk-label"><span>Linux (Debian / Ubuntu)</span><span style="color:#34d399">85%</span></div><div class="sk-bar"><div class="sk-fill" data-w="85" style="background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>Windows Server / AD</span><span style="color:#34d399">82%</span></div><div class="sk-bar"><div class="sk-fill" data-w="82" style="background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>VMware / VirtualBox / Proxmox</span><span style="color:#34d399">83%</span></div><div class="sk-bar"><div class="sk-fill" data-w="83" style="background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>Bash / PowerShell</span><span style="color:#34d399">78%</span></div><div class="sk-bar"><div class="sk-fill" data-w="78" style="background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-      </div>
-
-      <div class="card">
-        <div class="sk-cat" style="color:#f59e0b"><i class="fa fa-gauge"></i> Monitoring &amp; Outils</div>
-        <div class="sk-item"><div class="sk-label"><span>Nagios / Zabbix</span><span style="color:#f59e0b">76%</span></div><div class="sk-bar"><div class="sk-fill" data-w="76" style="background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>GLPI (gestion de parc)</span><span style="color:#f59e0b">74%</span></div><div class="sk-bar"><div class="sk-fill" data-w="74" style="background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>HAproxy / Tailscale</span><span style="color:#f59e0b">72%</span></div><div class="sk-bar"><div class="sk-fill" data-w="72" style="background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-        <div class="sk-item"><div class="sk-label"><span>GNS3 / Packet Tracer</span><span style="color:#f59e0b">88%</span></div><div class="sk-bar"><div class="sk-fill" data-w="88" style="background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-      </div>
-
+  <div class="skills-grid">
+    <div class="card">
+      <div class="sk-cat" style="color:#00d4ff"><i class="fa fa-network-wired"></i> Réseaux</div>
+      <div class="sk-item"><div class="sk-label"><span>Cisco IOS (Switch/Router)</span><span style="color:#00d4ff">88%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>VLAN / Etherchannel</span><span style="color:#00d4ff">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>TCP/IP · DNS · DHCP</span><span style="color:#00d4ff">90%</span></div><div class="sk-bar"><div class="sk-fill" style="width:90%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>SSH · Protocoles</span><span style="color:#00d4ff">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
     </div>
-
-    <p style="font-size:0.72rem;color:#1e2d3d;text-transform:uppercase;letter-spacing:0.09em;font-weight:600;margin-bottom:12px">Tous les outils</p>
-    <div class="tools-wrap">
-      <span class="tool">Cisco IOS</span><span class="tool">pfSense</span><span class="tool">Linux Debian</span><span class="tool">Ubuntu</span><span class="tool">Windows Server</span><span class="tool">Active Directory</span><span class="tool">VMware</span><span class="tool">VirtualBox</span><span class="tool">Proxmox</span><span class="tool">HAproxy</span><span class="tool">Tailscale</span><span class="tool">Snort</span><span class="tool">Suricata</span><span class="tool">Nmap</span><span class="tool">Wireshark</span><span class="tool">OpenVPN</span><span class="tool">Nagios</span><span class="tool">Zabbix</span><span class="tool">GLPI</span><span class="tool">TFTP</span><span class="tool">GNS3</span><span class="tool">Packet Tracer</span><span class="tool">VLAN</span><span class="tool">Etherchannel</span><span class="tool">SSH</span><span class="tool">DNS</span><span class="tool">DHCP</span><span class="tool">SNMP</span><span class="tool">Bash</span><span class="tool">PowerShell</span>
+    <div class="card">
+      <div class="sk-cat" style="color:#a78bfa"><i class="fa fa-shield-halved"></i> Cybersécurité</div>
+      <div class="sk-item"><div class="sk-label"><span>Snort / Suricata (IDS/IPS)</span><span style="color:#a78bfa">78%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Nmap / Wireshark</span><span style="color:#a78bfa">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>OpenVPN</span><span style="color:#a78bfa">80%</span></div><div class="sk-bar"><div class="sk-fill" style="width:80%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>pfSense (Firewall)</span><span style="color:#a78bfa">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
     </div>
+    <div class="card">
+      <div class="sk-cat" style="color:#34d399"><i class="fa fa-server"></i> Systèmes</div>
+      <div class="sk-item"><div class="sk-label"><span>Linux (Debian / Ubuntu)</span><span style="color:#34d399">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Windows Server / AD</span><span style="color:#34d399">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>VMware / VirtualBox / Proxmox</span><span style="color:#34d399">83%</span></div><div class="sk-bar"><div class="sk-fill" style="width:83%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Bash / PowerShell</span><span style="color:#34d399">78%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+    </div>
+    <div class="card">
+      <div class="sk-cat" style="color:#f59e0b"><i class="fa fa-gauge"></i> Monitoring &amp; Outils</div>
+      <div class="sk-item"><div class="sk-label"><span>Nagios / Zabbix</span><span style="color:#f59e0b">76%</span></div><div class="sk-bar"><div class="sk-fill" style="width:76%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>GLPI (gestion de parc)</span><span style="color:#f59e0b">74%</span></div><div class="sk-bar"><div class="sk-fill" style="width:74%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>HAproxy / Tailscale</span><span style="color:#f59e0b">72%</span></div><div class="sk-bar"><div class="sk-fill" style="width:72%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>GNS3 / Packet Tracer</span><span style="color:#f59e0b">88%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+    </div>
+  </div>
+
+  <p style="font-size:0.72rem;color:#1e2d3d;text-transform:uppercase;letter-spacing:0.09em;font-weight:600;margin-bottom:12px">Tous les outils</p>
+  <div class="tools-wrap">
+    <span class="tool">Cisco IOS</span><span class="tool">pfSense</span><span class="tool">Linux Debian</span><span class="tool">Ubuntu</span><span class="tool">Windows Server</span><span class="tool">Active Directory</span><span class="tool">VMware</span><span class="tool">VirtualBox</span><span class="tool">Proxmox</span><span class="tool">HAproxy</span><span class="tool">Tailscale</span><span class="tool">Snort</span><span class="tool">Suricata</span><span class="tool">Nmap</span><span class="tool">Wireshark</span><span class="tool">OpenVPN</span><span class="tool">Nagios</span><span class="tool">Zabbix</span><span class="tool">GLPI</span><span class="tool">TFTP</span><span class="tool">GNS3</span><span class="tool">Packet Tracer</span><span class="tool">VLAN</span><span class="tool">Etherchannel</span><span class="tool">SSH</span><span class="tool">DNS</span><span class="tool">DHCP</span><span class="tool">SNMP</span><span class="tool">Bash</span><span class="tool">PowerShell</span>
   </div>
 </section>
 
-<!-- ═══════════════════════════════ CONTACT ═══════════════════════════════ -->
+<!-- ═══════════ CONTACT ═══════════ -->
 <section id="contact" style="min-height:80vh">
-  <div class="reveal">
-    <span class="s-tag"><i class="fa fa-envelope"></i> Contact</span>
-    <h2>Me <span class="grad">Contacter</span></h2>
-    <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Disponible pour une alternance — réponse sous 24h.</p>
-    <div class="contact-grid">
+  <span class="s-tag"><i class="fa fa-envelope"></i> Contact</span>
+  <h2>Me <span class="grad">Contacter</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Disponible pour une alternance — réponse sous 24h.</p>
 
-      <div class="card">
-        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:14px">Recherche une alternance</h3>
-        <p style="color:#94a3b8;line-height:1.75;font-size:0.87rem;margin-bottom:20px">
-          Étudiant en BTS SIO SISR (Lycée Victor Hugo, Marseille), je suis disponible pour une alternance dans les domaines de l'administration systèmes &amp; réseaux, du support IT ou de la cybersécurité.
-        </p>
-        <div class="c-meta">
-          <a href="/cdn-cgi/l/email-protection#4d283f2426632f2c2a25292c3e2c3f342c237f790d2a202c2421632e2220"><i class="fa fa-envelope"></i> <span class="__cf_email__" data-cfemail="f693849f9dd89497919e92978597848f9798c4c2b6919b979f9ad895999b">[email&#160;protected]</span></a>
-          <span><i class="fa fa-map-pin"></i> 13010 Marseille</span>
-          <span><i class="fa fa-graduation-cap"></i> BTS SIO SISR — Lycée Victor Hugo · 2026</span>
-          <span><i class="fa fa-calendar"></i> 20 ans</span>
-        </div>
-        <div class="soc-row">
-          <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="soc-btn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="soc-btn"><i class="fab fa-github"></i></a>
-          <a href="/cdn-cgi/l/email-protection#7f1a0d1614511d1e18171b1e0c1e0d061e114d4b3f18121e1613511c1012" class="soc-btn"><i class="fa fa-envelope"></i></a>
-        </div>
+  <div class="contact-grid">
+    <div class="card">
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:14px">Recherche une alternance</h3>
+      <p style="color:#94a3b8;line-height:1.75;font-size:0.87rem;margin-bottom:20px">
+        Étudiant en BTS SIO SISR (Lycée Victor Hugo, Marseille), je suis disponible pour une alternance dans les domaines de l'administration systèmes &amp; réseaux, du support IT ou de la cybersécurité.
+      </p>
+      <div class="c-meta">
+        <a href="mailto:erik.baghdasaryan24@gmail.com"><i class="fa fa-envelope"></i> erik.baghdasaryan24@gmail.com</a>
+        <span><i class="fa fa-map-pin"></i> 13010 Marseille</span>
+        <span><i class="fa fa-graduation-cap"></i> BTS SIO SISR — Lycée Victor Hugo · 2026</span>
+        <span><i class="fa fa-calendar"></i> 20 ans</span>
       </div>
+      <div class="soc-row">
+        <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="soc-btn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="soc-btn"><i class="fab fa-github"></i></a>
+        <a href="mailto:erik.baghdasaryan24@gmail.com" class="soc-btn"><i class="fa fa-envelope"></i></a>
+      </div>
+    </div>
 
-      <div class="card" style="display:flex;flex-direction:column;justify-content:center;gap:20px">
-        <p style="font-size:0.87rem;color:#64748b;line-height:1.75">
-          Le moyen le plus simple de me contacter est directement par e-mail. Clique sur le bouton ci-dessous — ça ouvrira ton client mail avec mon adresse déjà renseignée.
-        </p>
-        <a href="mailto:erik.baghdasaryan24@gmail.com?subject=Proposition%20d'alternance&body=Bonjour%20Erik%2C%0A%0A" class="btn btn-p" style="align-self:flex-start">
-          <i class="fa fa-envelope"></i> M'envoyer un e-mail
+    <div class="card" style="display:flex;flex-direction:column;justify-content:center;gap:20px">
+      <p style="font-size:0.87rem;color:#64748b;line-height:1.75">
+        Le moyen le plus simple de me contacter est directement par e-mail. Clique sur le bouton ci-dessous — ça ouvrira ton client mail avec mon adresse déjà renseignée.
+      </p>
+      <a href="mailto:erik.baghdasaryan24@gmail.com?subject=Proposition%20d'alternance&body=Bonjour%20Erik%2C%0A%0A" class="btn btn-p" style="align-self:flex-start">
+        <i class="fa fa-envelope"></i> M'envoyer un e-mail
+      </a>
+      <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;display:flex;flex-direction:column;gap:10px">
+        <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="chip" style="width:fit-content">
+          <i class="fab fa-linkedin-in"></i> Envoyer un message LinkedIn
         </a>
-        <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;display:flex;flex-direction:column;gap:10px">
-          <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="chip" style="width:fit-content">
-            <i class="fab fa-linkedin-in"></i> Envoyer un message LinkedIn
-          </a>
-          <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="chip" style="width:fit-content">
-            <i class="fab fa-github"></i> Voir mon GitHub
-          </a>
-        </div>
+        <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="chip" style="width:fit-content">
+          <i class="fab fa-github"></i> Voir mon GitHub
+        </a>
       </div>
-
     </div>
   </div>
 </section>
 
 </main>
 
-<footer>
-  Fait avec ♥ par Erik Baghdasaryan &mdash; BTS SIO SISR &copy; 2025
-</footer>
+<footer>Fait avec ♥ par Erik Baghdasaryan &mdash; BTS SIO SISR &copy; 2025</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── REVEAL FIRST SECTION IMMEDIATELY
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".reveal").forEach(r => {
-    const rect = r.getBoundingClientRect();
-    if (rect.top < window.innerHeight) r.classList.add("visible");
-  });
-});
-
-// ── NAV SCROLL ACTIVE ────────────────────────────────────────
+<script>
+// NAV ACTIVE ON SCROLL
 window.addEventListener('scroll', () => {
   let cur = '';
   document.querySelectorAll('section').forEach(s => {
@@ -489,46 +417,9 @@ window.addEventListener('scroll', () => {
   document.querySelectorAll('.nav-links a').forEach(a => {
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
-});
-
-// ── SCROLL REVEAL ────────────────────────────────────────────
-function revealAll() {
-  document.querySelectorAll('.reveal').forEach(r => r.classList.add('visible'));
-}
-if ('IntersectionObserver' in window) {
-  const ro = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.05 });
-  document.querySelectorAll('.reveal').forEach(r => ro.observe(r));
-  // Fallback: if nothing visible after 800ms, reveal all
-  setTimeout(() => {
-    const anyVisible = document.querySelector('.reveal.visible');
-    if (!anyVisible) revealAll();
-  }, 800);
-} else {
-  revealAll();
-}
-// Also reveal on scroll as extra safety
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.reveal:not(.visible)').forEach(r => {
-    const rect = r.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.92) r.classList.add('visible');
-  });
 }, { passive: true });
 
-// ── SKILL BARS ───────────────────────────────────────────────
-const so = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      document.querySelectorAll('.sk-fill').forEach(f => { f.style.width = f.dataset.w + '%'; });
-      so.disconnect();
-    }
-  });
-}, { threshold: 0.25 });
-const skillSec = document.getElementById('skills');
-if (skillSec) so.observe(skillSec);
-
-// ── CANVAS NETWORK ANIMATION ─────────────────────────────────
+// CANVAS NETWORK ANIMATION
 (function () {
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
@@ -551,9 +442,9 @@ if (skillSec) so.observe(skillSec);
     this.pulse = 0;
   }
   Node.prototype.update = function () {
-    var dx = this.x - mouse.x, dy = this.y - mouse.y, d = Math.sqrt(dx * dx + dy * dy);
-    if (d < 110) { this.vx += (dx / d) * 0.05; this.vy += (dy / d) * 0.05; }
-    var sp = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+    var dx = this.x - mouse.x, dy = this.y - mouse.y, d = Math.sqrt(dx*dx+dy*dy);
+    if (d < 110) { this.vx += (dx/d)*0.05; this.vy += (dy/d)*0.05; }
+    var sp = Math.sqrt(this.vx*this.vx+this.vy*this.vy);
     if (sp > 1.2) { this.vx *= 0.9; this.vy *= 0.9; }
     this.x += this.vx; this.y += this.vy;
     if (this.x < 0) { this.x = 0; this.vx *= -1; } if (this.x > W) { this.x = W; this.vx *= -1; }
@@ -561,71 +452,72 @@ if (skillSec) so.observe(skillSec);
     if (this.pulse > 0) this.pulse -= 0.04;
   };
   Node.prototype.draw = function () {
-    var g = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, (this.r + this.pulse * 3) * 3);
-    g.addColorStop(0, 'rgba(0,212,255,' + (0.32 + this.pulse * 0.28) + ')');
-    g.addColorStop(1, 'rgba(0,212,255,0)');
-    ctx.beginPath(); ctx.arc(this.x, this.y, (this.r + this.pulse * 3) * 3, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
-    ctx.beginPath(); ctx.arc(this.x, this.y, this.r + this.pulse * 2, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0,212,255,' + (0.72 + this.pulse * 0.28) + ')'; ctx.fill();
+    var g = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,(this.r+this.pulse*3)*3);
+    g.addColorStop(0,'rgba(0,212,255,'+(0.32+this.pulse*0.28)+')');
+    g.addColorStop(1,'rgba(0,212,255,0)');
+    ctx.beginPath(); ctx.arc(this.x,this.y,(this.r+this.pulse*3)*3,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
+    ctx.beginPath(); ctx.arc(this.x,this.y,this.r+this.pulse*2,0,Math.PI*2);
+    ctx.fillStyle='rgba(0,212,255,'+(0.72+this.pulse*0.28)+')'; ctx.fill();
   };
 
   function Signal(from, to) {
-    this.from = from; this.to = to;
-    this.t = 0; this.t2 = 0; this.leg = 1;
-    this.speed = 0.016 + Math.random() * 0.014;
-    this.sz = 3.2;
-    this.cyan = Math.random() > 0.42;
-    this.alive = true; this.trail = [];
+    this.from=from; this.to=to; this.t=0; this.t2=0; this.leg=1;
+    this.speed=0.016+Math.random()*0.014; this.sz=3.2;
+    this.cyan=Math.random()>0.42; this.alive=true; this.trail=[];
   }
   Signal.prototype.pos = function () {
-    if (this.leg === 1) return { x: this.from.x + (mouse.x - this.from.x) * this.t, y: this.from.y + (mouse.y - this.from.y) * this.t };
-    return { x: mouse.x + (this.to.x - mouse.x) * this.t2, y: mouse.y + (this.to.y - mouse.y) * this.t2 };
+    if (this.leg===1) return {x:this.from.x+(mouse.x-this.from.x)*this.t, y:this.from.y+(mouse.y-this.from.y)*this.t};
+    return {x:mouse.x+(this.to.x-mouse.x)*this.t2, y:mouse.y+(this.to.y-mouse.y)*this.t2};
   };
   Signal.prototype.update = function () {
-    var p = this.pos();
-    this.trail.push({ x: p.x, y: p.y });
-    if (this.trail.length > 12) this.trail.shift();
-    if (this.leg === 1) { this.t += this.speed; if (this.t >= 1) { this.t = 1; this.leg = 2; } }
-    else { this.t2 += this.speed; if (this.t2 >= 1) { this.to.pulse = 1; this.alive = false; } }
+    var p=this.pos(); this.trail.push({x:p.x,y:p.y});
+    if (this.trail.length>12) this.trail.shift();
+    if (this.leg===1){this.t+=this.speed; if(this.t>=1){this.t=1;this.leg=2;}}
+    else{this.t2+=this.speed; if(this.t2>=1){this.to.pulse=1;this.alive=false;}}
   };
   Signal.prototype.draw = function () {
-    if (this.trail.length < 2) return;
-    var c = this.cyan ? '0,212,255' : '167,139,250';
-    for (var i = 1; i < this.trail.length; i++) {
-      var a = (i / this.trail.length) * 0.75;
-      ctx.beginPath(); ctx.moveTo(this.trail[i - 1].x, this.trail[i - 1].y); ctx.lineTo(this.trail[i].x, this.trail[i].y);
-      ctx.strokeStyle = 'rgba(' + c + ',' + a + ')'; ctx.lineWidth = this.sz * (i / this.trail.length); ctx.stroke();
+    if (this.trail.length<2) return;
+    var c=this.cyan?'0,212,255':'167,139,250';
+    for (var i=1;i<this.trail.length;i++) {
+      var a=(i/this.trail.length)*0.75;
+      ctx.beginPath(); ctx.moveTo(this.trail[i-1].x,this.trail[i-1].y); ctx.lineTo(this.trail[i].x,this.trail[i].y);
+      ctx.strokeStyle='rgba('+c+','+a+')'; ctx.lineWidth=this.sz*(i/this.trail.length); ctx.stroke();
     }
-    var p = this.pos();
-    var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, this.sz * 3.5);
-    g.addColorStop(0, 'rgba(' + c + ',0.9)'); g.addColorStop(1, 'transparent');
-    ctx.beginPath(); ctx.arc(p.x, p.y, this.sz * 3.5, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
-    ctx.beginPath(); ctx.arc(p.x, p.y, this.sz, 0, Math.PI * 2); ctx.fillStyle = 'rgba(' + c + ',1)'; ctx.fill();
+    var p=this.pos();
+    var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,this.sz*3.5);
+    g.addColorStop(0,'rgba('+c+',0.9)'); g.addColorStop(1,'transparent');
+    ctx.beginPath(); ctx.arc(p.x,p.y,this.sz*3.5,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x,p.y,this.sz,0,Math.PI*2); ctx.fillStyle='rgba('+c+',1)'; ctx.fill();
   };
 
-  for (var i = 0; i < NODES; i++) nodes.push(new Node());
-  var sTimer = 0;
+  for (var i=0; i<NODES; i++) nodes.push(new Node());
+  var sTimer=0;
 
   function loop() {
-    ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < nodes.length; i++) for (var j = i + 1; j < nodes.length; j++) {
-      var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y, d = Math.sqrt(dx * dx + dy * dy);
-      if (d < DIST) { var a = (1 - d / DIST) * 0.18; ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.strokeStyle = 'rgba(0,212,255,' + a + ')'; ctx.lineWidth = 0.8; ctx.stroke(); }
+    ctx.clearRect(0,0,W,H);
+    for (var i=0;i<nodes.length;i++) for (var j=i+1;j<nodes.length;j++) {
+      var dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y, d=Math.sqrt(dx*dx+dy*dy);
+      if (d<DIST){var a=(1-d/DIST)*0.18; ctx.beginPath(); ctx.moveTo(nodes[i].x,nodes[i].y); ctx.lineTo(nodes[j].x,nodes[j].y); ctx.strokeStyle='rgba(0,212,255,'+a+')'; ctx.lineWidth=0.8; ctx.stroke();}
     }
-    if (mouse.x > -1000) {
-      for (var k = 0; k < nodes.length; k++) {
-        var dx = nodes[k].x - mouse.x, dy = nodes[k].y - mouse.y, d = Math.sqrt(dx * dx + dy * dy);
-        if (d < DIST * 1.6) { var a = (1 - d / (DIST * 1.6)) * 0.38; ctx.beginPath(); ctx.moveTo(nodes[k].x, nodes[k].y); ctx.lineTo(mouse.x, mouse.y); ctx.strokeStyle = 'rgba(0,212,255,' + a + ')'; ctx.lineWidth = 0.65; ctx.setLineDash([4, 8]); ctx.stroke(); ctx.setLineDash([]); }
+    if (mouse.x>-1000) {
+      for (var k=0;k<nodes.length;k++) {
+        var dx=nodes[k].x-mouse.x, dy=nodes[k].y-mouse.y, d=Math.sqrt(dx*dx+dy*dy);
+        if (d<DIST*1.6){var a=(1-d/(DIST*1.6))*0.38; ctx.beginPath(); ctx.moveTo(nodes[k].x,nodes[k].y); ctx.lineTo(mouse.x,mouse.y); ctx.strokeStyle='rgba(0,212,255,'+a+')'; ctx.lineWidth=0.65; ctx.setLineDash([4,8]); ctx.stroke(); ctx.setLineDash([]);}
       }
-      var t = Date.now() / 1000;
-      for (var i = 0; i < 3; i++) { var ph = (t * 1.5 + i * 0.5) % 1; ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 10 + ph * 48, 0, Math.PI * 2); ctx.strokeStyle = 'rgba(0,212,255,' + (0.32 * (1 - ph)) + ')'; ctx.lineWidth = 1.5; ctx.stroke(); }
-      var mg = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 15);
-      mg.addColorStop(0, 'rgba(0,212,255,0.85)'); mg.addColorStop(1, 'transparent');
-      ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 15, 0, Math.PI * 2); ctx.fillStyle = mg; ctx.fill();
-      ctx.beginPath(); ctx.arc(mouse.x, mouse.y, 4, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+      var t=Date.now()/1000;
+      for (var i=0;i<3;i++){var ph=(t*1.5+i*0.5)%1; ctx.beginPath(); ctx.arc(mouse.x,mouse.y,10+ph*48,0,Math.PI*2); ctx.strokeStyle='rgba(0,212,255,'+(0.32*(1-ph))+')'; ctx.lineWidth=1.5; ctx.stroke();}
+      var mg=ctx.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,15);
+      mg.addColorStop(0,'rgba(0,212,255,0.85)'); mg.addColorStop(1,'transparent');
+      ctx.beginPath(); ctx.arc(mouse.x,mouse.y,15,0,Math.PI*2); ctx.fillStyle=mg; ctx.fill();
+      ctx.beginPath(); ctx.arc(mouse.x,mouse.y,4,0,Math.PI*2); ctx.fillStyle='#fff'; ctx.fill();
     }
-    for (var k = 0; k < nodes.length; k++) { nodes[k].update(); nodes[k].draw(); }
-    sTimer++;
-    if (sTimer > 20) {
-      sTimer = 0;
- 
+    for (var k=0;k<nodes.length;k++){nodes[k].update();nodes[k].draw();}
+    sTimer++; if(sTimer>20){sTimer=0; var a=nodes[Math.floor(Math.random()*nodes.length)],b=nodes[Math.floor(Math.random()*nodes.length)]; if(a!==b){var d=Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2); if(d<DIST*3.5)signals.push(new Signal(a,b));}}
+    for (var i=signals.length-1;i>=0;i--){signals[i].update();signals[i].draw();if(!signals[i].alive)signals.splice(i,1);}
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
+</body>
+</html>

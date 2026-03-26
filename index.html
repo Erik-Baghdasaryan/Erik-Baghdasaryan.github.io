@@ -65,6 +65,12 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.6rem);f
 .tl-list li{font-size:0.85rem;color:#94a3b8;line-height:1.6;padding-left:14px;position:relative}
 .tl-list li::before{content:'›';position:absolute;left:0;color:#00d4ff;font-weight:700}
 
+/* TIMONE SPLIT CARDS */
+.tl-timone-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;position:relative}
+.tl-timone-wrap::before{content:'';position:absolute;left:-32px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,#00d4ff,#7c3aed)}
+.tl-dot-timone{position:absolute;left:-37px;top:14px;width:11px;height:11px;border-radius:50%;background:#00d4ff;box-shadow:0 0 12px #00d4ff;z-index:1}
+.tl-timone-label{grid-column:1/-1;font-size:0.72rem;color:#00d4ff;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:4px}
+
 /* CV */
 .cv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-bottom:28px}
 .cv-cat{font-size:0.82rem;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px}
@@ -77,23 +83,57 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.7rem,3.5vw,2.6rem);f
 .lang-name{font-size:0.85rem;color:#cbd5e1;font-weight:500}
 .stars{color:#f59e0b;font-size:0.75rem}
 
-/* PROJECTS */
+/* PROJECTS — clickable */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
 .proj-icon{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,rgba(0,212,255,0.1),rgba(124,58,237,0.1));border:1px solid rgba(0,212,255,0.18);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
 .proj-name{font-size:0.98rem;font-weight:700;color:#f1f5f9}
 .proj-desc{font-size:0.83rem;color:#94a3b8;line-height:1.65;margin-bottom:12px}
 .pill-row{display:flex;flex-wrap:wrap;gap:5px}
 .pill{padding:3px 8px;background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);border-radius:6px;color:#a78bfa;font-size:0.7rem;font-weight:500}
+a.card{display:block;text-decoration:none;color:inherit;cursor:pointer}
+a.card:hover{border-color:rgba(0,212,255,0.45);background:rgba(0,212,255,0.04)}
+a.card .proj-pdf-hint{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:0.72rem;color:#00d4ff;opacity:0.7;transition:opacity 0.2s}
+a.card:hover .proj-pdf-hint{opacity:1}
 
-/* SKILLS */
+/* SKILLS — bars bigger & % fixed */
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-bottom:36px}
 .sk-cat{font-size:0.82rem;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:8px}
-.sk-item{margin-bottom:13px}
-.sk-label{display:flex;justify-content:space-between;font-size:0.8rem;color:#cbd5e1;font-weight:500;margin-bottom:5px}
-.sk-bar{height:5px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden}
+.sk-item{margin-bottom:16px}
+.sk-label{display:flex;justify-content:space-between;font-size:0.8rem;color:#cbd5e1;font-weight:500;margin-bottom:7px}
+.sk-bar{height:10px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden}
 .sk-fill{height:100%;border-radius:10px;transition:width 1.3s cubic-bezier(.4,0,.2,1)}
-.tools-wrap{display:flex;flex-wrap:wrap;gap:8px}
-.tool{padding:5px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:8px;font-size:0.76rem;color:#64748b;font-weight:500}
+
+/* TOOLS — bigger */
+.tools-wrap{display:flex;flex-wrap:wrap;gap:10px}
+a.tool{padding:8px 16px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:9px;font-size:0.82rem;color:#64748b;font-weight:500;text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px}
+a.tool:hover{color:#00d4ff;border-color:rgba(0,212,255,0.35);background:rgba(0,212,255,0.06)}
+
+/* HOBBIES */
+.hobbies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:10px}
+.hobby-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px;text-align:center;transition:border-color 0.25s}
+.hobby-card:hover{border-color:rgba(0,212,255,0.3)}
+.hobby-icon{font-size:2.2rem;margin-bottom:12px}
+.hobby-name{font-size:0.9rem;font-weight:600;color:#e2e8f0;margin-bottom:6px}
+.hobby-desc{font-size:0.78rem;color:#64748b;line-height:1.6}
+
+/* FUTUR */
+.futur-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:10px}
+.futur-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px;transition:border-color 0.25s}
+.futur-card:hover{border-color:rgba(124,58,237,0.4)}
+.futur-step{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px}
+.futur-title{font-size:1rem;font-weight:700;color:#f1f5f9;margin-bottom:8px}
+.futur-desc{font-size:0.81rem;color:#64748b;line-height:1.65}
+.futur-timeline{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:0.75rem;color:#475569}
+.futur-timeline i{color:#00d4ff;font-size:0.7rem}
+
+/* JUSTIFICATIFS */
+.justif-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-top:10px}
+a.justif-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:22px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:12px;transition:all 0.25s;cursor:pointer}
+a.justif-card:hover{border-color:rgba(52,211,153,0.4);background:rgba(52,211,153,0.04)}
+.justif-icon{width:44px;height:44px;border-radius:11px;background:linear-gradient(135deg,rgba(52,211,153,0.12),rgba(16,185,129,0.12));border:1px solid rgba(52,211,153,0.25);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.justif-name{font-size:0.95rem;font-weight:700;color:#f1f5f9}
+.justif-desc{font-size:0.78rem;color:#64748b;line-height:1.55}
+.justif-dl{display:inline-flex;align-items:center;gap:6px;font-size:0.74rem;color:#34d399;font-weight:600;margin-top:auto}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -113,6 +153,7 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
   .contact-grid{grid-template-columns:1fr}
   .nav-links a span{display:none}
   .nav-links a{padding:7px 9px}
+  .tl-timone-wrap{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -123,12 +164,15 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
 <nav>
   <div class="nav-logo">Erik <span>Baghdasaryan</span></div>
   <ul class="nav-links">
-    <li><a href="#about"      class="active"><i class="fa fa-user"></i><span> À propos</span></a></li>
-    <li><a href="#experience"             ><i class="fa fa-briefcase"></i><span> Expériences</span></a></li>
-    <li><a href="#cv"                     ><i class="fa fa-file-lines"></i><span> CV</span></a></li>
-    <li><a href="#projects"               ><i class="fa fa-code"></i><span> Projets</span></a></li>
-    <li><a href="#skills"                 ><i class="fa fa-bolt"></i><span> Compétences</span></a></li>
-    <li><a href="#contact"                ><i class="fa fa-envelope"></i><span> Contact</span></a></li>
+    <li><a href="#about"        class="active"><i class="fa fa-user"></i><span> À propos</span></a></li>
+    <li><a href="#experience"               ><i class="fa fa-briefcase"></i><span> Expériences</span></a></li>
+    <li><a href="#cv"                       ><i class="fa fa-file-lines"></i><span> CV</span></a></li>
+    <li><a href="#projects"                 ><i class="fa fa-code"></i><span> Projets</span></a></li>
+    <li><a href="#skills"                   ><i class="fa fa-bolt"></i><span> Compétences</span></a></li>
+    <li><a href="#hobbies"                  ><i class="fa fa-heart"></i><span> Hobbies</span></a></li>
+    <li><a href="#futur"                    ><i class="fa fa-rocket"></i><span> Le futur</span></a></li>
+    <li><a href="#justificatifs"            ><i class="fa fa-folder-open"></i><span> Justificatifs</span></a></li>
+    <li><a href="#contact"                  ><i class="fa fa-envelope"></i><span> Contact</span></a></li>
   </ul>
 </nav>
 
@@ -148,11 +192,11 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
       </p>
       <div class="hero-btns">
         <a href="#projects" class="btn btn-p"><i class="fa fa-rocket"></i> Voir mes projets</a>
-        <a href="CV.pdf" download class="btn btn-o"><i class="fa fa-download"></i> Télécharger CV</a>
+        <a href="/pdfs/CV.pdf" download class="btn btn-o"><i class="fa fa-download"></i> Télécharger CV</a>
       </div>
       <div class="contact-chips">
         <span class="chip"><i class="fa fa-map-pin"></i> 13010 Marseille · 20 ans</span>
-        <a href="mailto:erik.baghdasaryan24@gmail.com" class="chip"><i class="fa fa-envelope"></i> erik.baghdasaryan24@gmail.com</a>
+        <a href="mailto:erik.baghdasaryan@example.com" class="chip"><i class="fa fa-envelope"></i> erik.baghdasaryan@gmail.com</a>
         <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="chip"><i class="fab fa-linkedin-in"></i> erik-baghdasaryan</a>
         <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="chip"><i class="fab fa-github"></i> Erik-Baghdasaryan</a>
       </div>
@@ -161,7 +205,6 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
       <div class="photo-ring">
         <div class="photo-inner">👨‍💻</div>
       </div>
-      <span style="padding:5px 14px;background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:20px;font-size:0.72rem;color:#34d399;font-weight:600">Alternance 2025</span>
     </div>
   </div>
 </section>
@@ -173,20 +216,41 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
   <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Mes missions et expériences terrain.</p>
 
   <div class="timeline">
-    <div class="tl-item">
+    <!-- Timone — deux cartes côte à côte -->
+    <div style="position:relative;margin-bottom:28px">
       <div class="tl-dot"></div>
-      <div class="card">
-        <div class="tl-date">Stage &middot; 17 semaines</div>
-        <div class="tl-role">Technicien Support Informatique</div>
-        <div class="tl-company">Hôpital La Timone &middot; AP-HM</div>
-        <div class="tl-addr"><i class="fa fa-map-pin" style="color:#00d4ff;font-size:0.7rem;margin-right:5px"></i>264 Rue Saint-Pierre, 13005 Marseille</div>
-        <ul class="tl-list">
-          <li>Clonage et déploiement des systèmes d'exploitation sur parc informatique hospitalier</li>
-          <li>Dépannage des ordinateurs, imprimantes et périphériques</li>
-          <li>Installation et configuration des postes de travail en local et à distance</li>
-        </ul>
+      <div style="font-size:0.72rem;color:#00d4ff;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:10px;margin-left:0">
+        <i class="fa fa-hospital" style="margin-right:6px"></i>Hôpital La Timone &middot; AP-HM — 264 Rue Saint-Pierre, 13005 Marseille
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <!-- Stage 1 — 5 semaines -->
+        <div class="card" style="border-color:rgba(0,212,255,0.15)">
+          <div class="tl-date" style="font-size:0.8rem">Stage · 5 semaines</div>
+          <div class="tl-role">Technicien Support Informatique</div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05)">
+            <ul class="tl-list">
+              <li>Clonage et déploiement des systèmes d'exploitation sur parc hospitalier</li>
+              <li>Dépannage des ordinateurs, imprimantes et périphériques</li>
+              <li>Installation et configuration des postes de travail</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Stage 2 — 6 semaines -->
+        <div class="card" style="border-color:rgba(124,58,237,0.2)">
+          <div class="tl-date" style="font-size:0.8rem;color:#a78bfa">Stage · 6 semaines</div>
+          <div class="tl-role">Technicien Support Informatique</div>
+          <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.05)">
+            <ul class="tl-list">
+              <li>Supervision réseau et gestion des incidents niveau 1</li>
+              <li>Configuration à distance des postes via outils d'administration</li>
+              <li>Participation au renouvellement du parc informatique</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Atelier Express -->
     <div class="tl-item">
       <div class="tl-dot"></div>
       <div class="card">
@@ -257,7 +321,7 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
     <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;gap:16px">
       <div class="cv-cat" style="color:#34d399"><i class="fa fa-download"></i> Télécharger</div>
       <p style="font-size:0.83rem;color:#64748b;line-height:1.6">Mon CV complet au format PDF avec l'ensemble de mon parcours, compétences et expériences.</p>
-      <a href="CV.pdf" download class="btn btn-p" style="align-self:flex-start">
+      <a href="/pdfs/CV.pdf" download class="btn btn-p" style="align-self:flex-start">
         <i class="fa fa-file-pdf"></i> Télécharger le CV (PDF)
       </a>
     </div>
@@ -271,48 +335,54 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
   <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Labs, maquettes réseau et projets de sécurité réalisés en formation.</p>
 
   <div class="projects-grid">
-    <div class="card">
+    <a href="/pdfs/projet-pfsense.pdf" target="_blank" class="card">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
         <div class="proj-icon">🌐</div><div class="proj-name">Infrastructure Réseau pfSense</div>
       </div>
       <p class="proj-desc">Déploiement d'un pare-feu pfSense avec segmentation VLANs, règles NAT/ACL, portail captif et supervision des flux réseau.</p>
       <div class="pill-row"><span class="pill">pfSense</span><span class="pill">VLAN</span><span class="pill">NAT</span><span class="pill">ACL</span></div>
-    </div>
-    <div class="card">
+      <span class="proj-pdf-hint"><i class="fa fa-file-pdf"></i> Voir le rapport PDF</span>
+    </a>
+    <a href="/pdfs/projet-active-directory.pdf" target="_blank" class="card">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
         <div class="proj-icon">🔒</div><div class="proj-name">Lab Active Directory</div>
       </div>
       <p class="proj-desc">Mise en place d'un domaine Windows Server avec Active Directory, GPO, gestion des utilisateurs et intégration des postes clients.</p>
       <div class="pill-row"><span class="pill">Windows Server</span><span class="pill">AD DS</span><span class="pill">GPO</span><span class="pill">PowerShell</span></div>
-    </div>
-    <div class="card">
+      <span class="proj-pdf-hint"><i class="fa fa-file-pdf"></i> Voir le rapport PDF</span>
+    </a>
+    <a href="/pdfs/projet-vpn.pdf" target="_blank" class="card">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
         <div class="proj-icon">📡</div><div class="proj-name">VPN Site-à-Site</div>
       </div>
       <p class="proj-desc">Configuration d'un tunnel OpenVPN entre deux sites distants simulés sous GNS3 avec routeurs Cisco et authentification par certificats.</p>
       <div class="pill-row"><span class="pill">OpenVPN</span><span class="pill">Cisco IOS</span><span class="pill">GNS3</span><span class="pill">IPSec</span></div>
-    </div>
-    <div class="card">
+      <span class="proj-pdf-hint"><i class="fa fa-file-pdf"></i> Voir le rapport PDF</span>
+    </a>
+    <a href="/pdfs/projet-ids-ips.pdf" target="_blank" class="card">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
         <div class="proj-icon">🛡️</div><div class="proj-name">IDS/IPS avec Snort &amp; Suricata</div>
       </div>
       <p class="proj-desc">Déploiement d'un système de détection d'intrusions avec règles personnalisées et analyse des alertes via Wireshark.</p>
       <div class="pill-row"><span class="pill">Snort</span><span class="pill">Suricata</span><span class="pill">Wireshark</span><span class="pill">Nmap</span></div>
-    </div>
-    <div class="card">
+      <span class="proj-pdf-hint"><i class="fa fa-file-pdf"></i> Voir le rapport PDF</span>
+    </a>
+    <a href="/pdfs/projet-nagios-zabbix.pdf" target="_blank" class="card">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
         <div class="proj-icon">🖥️</div><div class="proj-name">Supervision Nagios &amp; Zabbix</div>
       </div>
       <p class="proj-desc">Solution de monitoring réseau avec alertes mail, tableaux de bord et supervision SNMP des équipements actifs.</p>
       <div class="pill-row"><span class="pill">Nagios</span><span class="pill">Zabbix</span><span class="pill">SNMP</span><span class="pill">Linux</span></div>
-    </div>
-    <div class="card">
+      <span class="proj-pdf-hint"><i class="fa fa-file-pdf"></i> Voir le rapport PDF</span>
+    </a>
+    <a href="/pdfs/projet-proxmox.pdf" target="_blank" class="card">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:13px">
         <div class="proj-icon">⚙️</div><div class="proj-name">Virtualisation &amp; Proxmox</div>
       </div>
       <p class="proj-desc">Environnement de lab sous Proxmox avec VMs Debian/Ubuntu, HAproxy en load-balancer et accès sécurisé via Tailscale.</p>
       <div class="pill-row"><span class="pill">Proxmox</span><span class="pill">HAproxy</span><span class="pill">Tailscale</span><span class="pill">Debian</span></div>
-    </div>
+      <span class="proj-pdf-hint"><i class="fa fa-file-pdf"></i> Voir le rapport PDF</span>
+    </a>
   </div>
 </section>
 
@@ -325,37 +395,214 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
   <div class="skills-grid">
     <div class="card">
       <div class="sk-cat" style="color:#00d4ff"><i class="fa fa-network-wired"></i> Réseaux</div>
-      <div class="sk-item"><div class="sk-label"><span>Cisco IOS (Switch/Router)</span><span style="color:#00d4ff">23%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>VLAN / Etherchannel</span><span style="color:#00d4ff">30%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>TCP/IP · DNS · DHCP</span><span style="color:#00d4ff">26%</span></div><div class="sk-bar"><div class="sk-fill" style="width:90%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>SSH · Protocoles</span><span style="color:#00d4ff">36%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Cisco IOS (Switch/Router)</span><span style="color:#00d4ff">88%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>VLAN / Etherchannel</span><span style="color:#00d4ff">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>TCP/IP · DNS · DHCP</span><span style="color:#00d4ff">90%</span></div><div class="sk-bar"><div class="sk-fill" style="width:90%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>SSH · Protocoles</span><span style="color:#00d4ff">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#00d4ff,#0ea5e9)"></div></div></div>
     </div>
     <div class="card">
       <div class="sk-cat" style="color:#a78bfa"><i class="fa fa-shield-halved"></i> Cybersécurité</div>
-      <div class="sk-item"><div class="sk-label"><span>Snort / Suricata (IDS/IPS)</span><span style="color:#a78bfa">15%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>Nmap / Wireshark</span><span style="color:#a78bfa">13%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>OpenVPN</span><span style="color:#a78bfa">8%</span></div><div class="sk-bar"><div class="sk-fill" style="width:80%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>pfSense (Firewall)</span><span style="color:#a78bfa">6%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Snort / Suricata (IDS/IPS)</span><span style="color:#a78bfa">78%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Nmap / Wireshark</span><span style="color:#a78bfa">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>OpenVPN</span><span style="color:#a78bfa">80%</span></div><div class="sk-bar"><div class="sk-fill" style="width:80%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>pfSense (Firewall)</span><span style="color:#a78bfa">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#a78bfa,#7c3aed)"></div></div></div>
     </div>
     <div class="card">
       <div class="sk-cat" style="color:#34d399"><i class="fa fa-server"></i> Systèmes</div>
-      <div class="sk-item"><div class="sk-label"><span>Linux (Debian / Ubuntu)</span><span style="color:#34d399">26%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>Windows Server / AD</span><span style="color:#34d399">30%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>VMware / VirtualBox / Proxmox</span><span style="color:#34d399">36%</span></div><div class="sk-bar"><div class="sk-fill" style="width:83%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>Bash / PowerShell</span><span style="color:#34d399">12%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Linux (Debian / Ubuntu)</span><span style="color:#34d399">85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Windows Server / AD</span><span style="color:#34d399">82%</span></div><div class="sk-bar"><div class="sk-fill" style="width:82%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>VMware / VirtualBox / Proxmox</span><span style="color:#34d399">83%</span></div><div class="sk-bar"><div class="sk-fill" style="width:83%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Bash / PowerShell</span><span style="color:#34d399">78%</span></div><div class="sk-bar"><div class="sk-fill" style="width:78%;background:linear-gradient(90deg,#34d399,#10b981)"></div></div></div>
     </div>
     <div class="card">
       <div class="sk-cat" style="color:#f59e0b"><i class="fa fa-gauge"></i> Monitoring &amp; Outils</div>
-      <div class="sk-item"><div class="sk-label"><span>Nagios / Zabbix</span><span style="color:#f59e0b">15%</span></div><div class="sk-bar"><div class="sk-fill" style="width:76%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>GLPI (gestion de parc)</span><span style="color:#f59e0b">19%</span></div><div class="sk-bar"><div class="sk-fill" style="width:74%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>HAproxy / Tailscale</span><span style="color:#f59e0b">18%</span></div><div class="sk-bar"><div class="sk-fill" style="width:72%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
-      <div class="sk-item"><div class="sk-label"><span>GNS3 / Packet Tracer</span><span style="color:#f59e0b">21%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>Nagios / Zabbix</span><span style="color:#f59e0b">76%</span></div><div class="sk-bar"><div class="sk-fill" style="width:76%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>GLPI (gestion de parc)</span><span style="color:#f59e0b">74%</span></div><div class="sk-bar"><div class="sk-fill" style="width:74%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>HAproxy / Tailscale</span><span style="color:#f59e0b">72%</span></div><div class="sk-bar"><div class="sk-fill" style="width:72%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
+      <div class="sk-item"><div class="sk-label"><span>GNS3 / Packet Tracer</span><span style="color:#f59e0b">88%</span></div><div class="sk-bar"><div class="sk-fill" style="width:88%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div></div>
     </div>
   </div>
 
-  <p style="font-size:0.72rem;color:#1e2d3d;text-transform:uppercase;letter-spacing:0.09em;font-weight:600;margin-bottom:12px">Tous les outils</p>
+  <p style="font-size:0.72rem;color:#475569;text-transform:uppercase;letter-spacing:0.09em;font-weight:600;margin-bottom:14px">Tous les outils</p>
   <div class="tools-wrap">
-    <span class="tool">Cisco IOS</span><span class="tool">pfSense</span><span class="tool">Linux Debian</span><span class="tool">Ubuntu</span><span class="tool">Windows Server</span><span class="tool">Active Directory</span><span class="tool">VMware</span><span class="tool">VirtualBox</span><span class="tool">Proxmox</span><span class="tool">HAproxy</span><span class="tool">Tailscale</span><span class="tool">Snort</span><span class="tool">Suricata</span><span class="tool">Nmap</span><span class="tool">Wireshark</span><span class="tool">OpenVPN</span><span class="tool">Nagios</span><span class="tool">Zabbix</span><span class="tool">GLPI</span><span class="tool">TFTP</span><span class="tool">GNS3</span><span class="tool">Packet Tracer</span><span class="tool">VLAN</span><span class="tool">Etherchannel</span><span class="tool">SSH</span><span class="tool">DNS</span><span class="tool">DHCP</span><span class="tool">SNMP</span><span class="tool">Bash</span><span class="tool">PowerShell</span>
+    <a href="/pdfs/cisco-ios.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Cisco IOS</a>
+    <a href="/pdfs/pfsense.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>pfSense</a>
+    <a href="/pdfs/linux-debian.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Linux Debian</a>
+    <a href="/pdfs/ubuntu.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Ubuntu</a>
+    <a href="/pdfs/windows-server.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Windows Server</a>
+    <a href="/pdfs/active-directory.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Active Directory</a>
+    <a href="/pdfs/vmware.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>VMware</a>
+    <a href="/pdfs/virtualbox.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>VirtualBox</a>
+    <a href="/pdfs/proxmox.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Proxmox</a>
+    <a href="/pdfs/haproxy.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>HAproxy</a>
+    <a href="/pdfs/tailscale.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Tailscale</a>
+    <a href="/pdfs/snort.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Snort</a>
+    <a href="/pdfs/suricata.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Suricata</a>
+    <a href="/pdfs/nmap.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Nmap</a>
+    <a href="/pdfs/wireshark.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Wireshark</a>
+    <a href="/pdfs/openvpn.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>OpenVPN</a>
+    <a href="/pdfs/nagios.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Nagios</a>
+    <a href="/pdfs/zabbix.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Zabbix</a>
+    <a href="/pdfs/glpi.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>GLPI</a>
+    <a href="/pdfs/tftp.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>TFTP</a>
+    <a href="/pdfs/gns3.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>GNS3</a>
+    <a href="/pdfs/packet-tracer.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Packet Tracer</a>
+    <a href="/pdfs/vlan.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>VLAN</a>
+    <a href="/pdfs/etherchannel.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Etherchannel</a>
+    <a href="/pdfs/ssh.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>SSH</a>
+    <a href="/pdfs/dns.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>DNS</a>
+    <a href="/pdfs/dhcp.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>DHCP</a>
+    <a href="/pdfs/snmp.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>SNMP</a>
+    <a href="/pdfs/bash.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>Bash</a>
+    <a href="/pdfs/powershell.pdf" target="_blank" class="tool"><i class="fa fa-file-pdf" style="font-size:0.7rem;color:#00d4ff"></i>PowerShell</a>
+  </div>
+</section>
+
+<!-- ═══════════ HOBBIES ═══════════ -->
+<section id="hobbies">
+  <span class="s-tag"><i class="fa fa-heart"></i> Loisirs</span>
+  <h2>Mes <span class="grad">Hobbies</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Ce qui m'anime en dehors de l'informatique.</p>
+
+  <div class="hobbies-grid">
+    <div class="hobby-card">
+      <div class="hobby-icon">🎮</div>
+      <div class="hobby-name">Gaming</div>
+      <p class="hobby-desc">Passionné de jeux stratégie et FPS. J'apprécie particulièrement les jeux qui demandent de la réflexion et de la coordination en équipe.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🏋️</div>
+      <div class="hobby-name">Sport</div>
+      <p class="hobby-desc">La musculation et les sports collectifs font partie de ma routine. Le sport m'aide à rester concentré et discipliné au quotidien.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🔧</div>
+      <div class="hobby-name">Home Lab</div>
+      <p class="hobby-desc">Je maintiens un lab personnel avec Proxmox, des VMs Linux et divers projets réseau pour expérimenter en dehors des cours.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">📚</div>
+      <div class="hobby-name">Veille Tech</div>
+      <p class="hobby-desc">Je suis activement l'actualité cybersécurité, les nouvelles vulnérabilités et les tendances de l'infrastructure cloud.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🎧</div>
+      <div class="hobby-name">Musique</div>
+      <p class="hobby-desc">La musique est un compagnon incontournable lors de mes sessions de travail et d'apprentissage. Genres variés selon l'humeur.</p>
+    </div>
+    <div class="hobby-card">
+      <div class="hobby-icon">🌍</div>
+      <div class="hobby-name">Langues & Culture</div>
+      <p class="hobby-desc">Avec le français, le russe, l'arménien et l'anglais, j'aime explorer différentes cultures et élargir mes horizons linguistiques.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LE FUTUR ═══════════ -->
+<section id="futur">
+  <span class="s-tag"><i class="fa fa-rocket"></i> Perspectives</span>
+  <h2>Le <span class="grad">Futur</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Mes objectifs, ambitions et la direction que je souhaite prendre après le BTS.</p>
+
+  <div class="futur-grid">
+    <div class="futur-card">
+      <div class="futur-step" style="color:#00d4ff">Étape 1 — 2026</div>
+      <div class="futur-title">Obtenir le BTS SIO SISR</div>
+      <p class="futur-desc">Valider mon diplôme avec mention et consolider mes compétences en administration systèmes, réseaux et cybersécurité.</p>
+      <div class="futur-timeline"><i class="fa fa-calendar"></i> Juin 2026</div>
+    </div>
+    <div class="futur-card">
+      <div class="futur-step" style="color:#a78bfa">Étape 2 — 2026–2027</div>
+      <div class="futur-title">Certification CCNA &amp; Emploi</div>
+      <p class="futur-desc">Décrocher la certification Cisco CCNA complète et intégrer une entreprise en tant qu'administrateur réseau ou technicien infrastructure.</p>
+      <div class="futur-timeline"><i class="fa fa-calendar"></i> Fin 2026</div>
+    </div>
+    <div class="futur-card">
+      <div class="futur-step" style="color:#34d399">Étape 3 — 2027–2028</div>
+      <div class="futur-title">Licence / Bachelor IT</div>
+      <p class="futur-desc">Poursuivre en Bachelor Réseaux & Télécommunications ou en Licence Pro Cybersécurité pour approfondir mes connaissances et évoluer vers des postes seniors.</p>
+      <div class="futur-timeline"><i class="fa fa-calendar"></i> 2027–2028</div>
+    </div>
+    <div class="futur-card">
+      <div class="futur-step" style="color:#f59e0b">Vision long terme</div>
+      <div class="futur-title">Ingénieur Cybersécurité</div>
+      <p class="futur-desc">Mon ambition est de devenir Ingénieur Sécurité ou Architecte Réseau, en travaillant sur des infrastructures critiques et des projets à forte valeur ajoutée.</p>
+      <div class="futur-timeline"><i class="fa fa-star"></i> Objectif 5 ans</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ JUSTIFICATIFS ═══════════ -->
+<section id="justificatifs">
+  <span class="s-tag"><i class="fa fa-folder-open"></i> Documents</span>
+  <h2>Mes <span class="grad">Justificatifs</span></h2>
+  <p style="color:#334155;font-size:0.87rem;margin-bottom:44px">Attestations, conventions de stage et documents officiels liés à mes expériences.</p>
+
+  <div class="justif-grid">
+    <a href="/pdfs/attestation-stage-timone-1.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📋</div>
+      <div>
+        <div class="justif-name">Attestation de stage — La Timone (5 sem.)</div>
+        <p class="justif-desc">Attestation officielle délivrée par l'AP-HM pour le premier stage de 5 semaines en support informatique.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/attestation-stage-timone-2.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📋</div>
+      <div>
+        <div class="justif-name">Attestation de stage — La Timone (6 sem.)</div>
+        <p class="justif-desc">Attestation officielle délivrée par l'AP-HM pour le deuxième stage de 6 semaines en administration réseau.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/attestation-atelier-express.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📋</div>
+      <div>
+        <div class="justif-name">Attestation de stage — Atelier Express</div>
+        <p class="justif-desc">Attestation de fin de stage chez Atelier Express — 6 semaines en tant que technicien réseau &amp; support.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/convention-stage-timone-1.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📄</div>
+      <div>
+        <div class="justif-name">Convention de stage — La Timone (5 sem.)</div>
+        <p class="justif-desc">Convention tripartite signée entre l'établissement scolaire, l'entreprise et l'élève pour le premier stage.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/convention-stage-timone-2.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📄</div>
+      <div>
+        <div class="justif-name">Convention de stage — La Timone (6 sem.)</div>
+        <p class="justif-desc">Convention tripartite signée pour le deuxième passage à l'AP-HM avec nouvelles missions définies.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/rapport-stage-timone.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📝</div>
+      <div>
+        <div class="justif-name">Rapport de stage — La Timone</div>
+        <p class="justif-desc">Rapport détaillé de mes missions, observations et compétences acquises durant les stages à l'Hôpital La Timone.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/rapport-stage-atelier-express.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">📝</div>
+      <div>
+        <div class="justif-name">Rapport de stage — Atelier Express</div>
+        <p class="justif-desc">Rapport complet de mon stage de 6 semaines chez Atelier Express avec bilan des compétences développées.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
+    <a href="/pdfs/releve-notes.pdf" target="_blank" class="justif-card">
+      <div class="justif-icon">🎓</div>
+      <div>
+        <div class="justif-name">Relevé de notes BTS SIO</div>
+        <p class="justif-desc">Relevé de notes officiel du Lycée Victor Hugo pour la formation BTS SIO option SISR.</p>
+      </div>
+      <span class="justif-dl"><i class="fa fa-download"></i> Télécharger le PDF</span>
+    </a>
   </div>
 </section>
 
@@ -372,7 +619,7 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
         Étudiant en BTS SIO SISR (Lycée Victor Hugo, Marseille), je suis disponible pour une alternance dans les domaines de l'administration systèmes &amp; réseaux, du support IT ou de la cybersécurité.
       </p>
       <div class="c-meta">
-        <a href="mailto:erik.baghdasaryan24@gmail.com"><i class="fa fa-envelope"></i> erik.baghdasaryan24@gmail.com</a>
+        <a href="mailto:erik.baghdasaryan@gmail.com"><i class="fa fa-envelope"></i> erik.baghdasaryan@gmail.com</a>
         <span><i class="fa fa-map-pin"></i> 13010 Marseille</span>
         <span><i class="fa fa-graduation-cap"></i> BTS SIO SISR — Lycée Victor Hugo · 2026</span>
         <span><i class="fa fa-calendar"></i> 20 ans</span>
@@ -380,7 +627,7 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
       <div class="soc-row">
         <a href="https://linkedin.com/in/erik-baghdasaryan" target="_blank" class="soc-btn"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://github.com/Erik-Baghdasaryan" target="_blank" class="soc-btn"><i class="fab fa-github"></i></a>
-        <a href="mailto:erik.baghdasaryan24@gmail.com" class="soc-btn"><i class="fa fa-envelope"></i></a>
+        <a href="mailto:erik.baghdasaryan@gmail.com" class="soc-btn"><i class="fa fa-envelope"></i></a>
       </div>
     </div>
 
@@ -388,7 +635,7 @@ footer{text-align:center;padding:1.5rem;color:#1e2d3d;font-size:0.76rem;border-t
       <p style="font-size:0.87rem;color:#64748b;line-height:1.75">
         Le moyen le plus simple de me contacter est directement par e-mail. Clique sur le bouton ci-dessous — ça ouvrira ton client mail avec mon adresse déjà renseignée.
       </p>
-      <a href="mailto:erik.baghdasaryan24@gmail.com?subject=Proposition%20d'alternance&body=Bonjour%20Erik%2C%0A%0A" class="btn btn-p" style="align-self:flex-start">
+      <a href="mailto:erik.baghdasaryan@gmail.com" class="btn btn-p" style="align-self:flex-start">
         <i class="fa fa-envelope"></i> M'envoyer un e-mail
       </a>
       <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:18px;display:flex;flex-direction:column;gap:10px">
@@ -509,11 +756,16 @@ window.addEventListener('scroll', () => {
       var mg=ctx.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,15);
       mg.addColorStop(0,'rgba(0,212,255,0.85)'); mg.addColorStop(1,'transparent');
       ctx.beginPath(); ctx.arc(mouse.x,mouse.y,15,0,Math.PI*2); ctx.fillStyle=mg; ctx.fill();
-      ctx.beginPath(); ctx.arc(mouse.x,mouse.y,4,0,Math.PI*2); ctx.fillStyle='#fff'; ctx.fill();
+      ctx.beginPath(); ctx.arc(mouse.x,mouse.y,4.5,0,Math.PI*2); ctx.fillStyle='#fff'; ctx.fill();
     }
-    for (var k=0;k<nodes.length;k++){nodes[k].update();nodes[k].draw();}
-    sTimer++; if(sTimer>20){sTimer=0; var a=nodes[Math.floor(Math.random()*nodes.length)],b=nodes[Math.floor(Math.random()*nodes.length)]; if(a!==b){var d=Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2); if(d<DIST*3.5)signals.push(new Signal(a,b));}}
-    for (var i=signals.length-1;i>=0;i--){signals[i].update();signals[i].draw();if(!signals[i].alive)signals.splice(i,1);}
+    nodes.forEach(n => { n.update(); n.draw(); });
+    signals.forEach((s,i) => { s.update(); s.draw(); if(!s.alive) signals.splice(i,1); });
+    sTimer++;
+    if (sTimer%38===0 && mouse.x>-1000) {
+      var from=nodes[Math.floor(Math.random()*nodes.length)];
+      var to=nodes[Math.floor(Math.random()*nodes.length)];
+      if (from!==to) signals.push(new Signal(from,to));
+    }
     requestAnimationFrame(loop);
   }
   loop();
